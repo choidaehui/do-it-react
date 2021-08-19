@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropsComponent from './component/PropsComponent';
 
 // 작성된 컴포넌트를 App.js로 불러오기
 // import 'MyComponent';의 경우 MyComponent.js > MyComponent.jsx > 파일이 없으면 MyComponent 폴더를 검색 
@@ -11,9 +12,9 @@ class App extends React.Component {
        // JSX는 HTML이 아니라 XML 마크업 규칙을 따른다.
        // 엘리먼트의 시작표시와 < 마침 표시의 />의 짝이 맞아야 한다.
        // 컴포넌트를 JSX 안에 마크업 형식으로 추가
-      <div className="body">
-        <TodaysPlan />
-      </div>
+      <PropsComponent
+        name="두잇 리엑트"
+      />  
     );
   }
 }
