@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import BooleanComponent from './component/BooleanComponent';
 import ChildComponent2 from './component/ChildComponent2';
+import Counter from './component/Counter';
+import StateExample from './component/StateExample';
 
 // 작성된 컴포넌트를 App.js로 불러오기
 // import 'MyComponent';의 경우 MyComponent.js > MyComponent.jsx > 파일이 없으면 MyComponent 폴더를 검색 
@@ -14,10 +16,7 @@ class App extends React.Component {
        // 엘리먼트의 시작표시와 < 마침 표시의 />의 짝이 맞아야 한다.
        // 컴포넌트를 JSX 안에 마크업 형식으로 추가
       <div>
-        <ChildComponent2
-          objValue={{ age: 20}}
-          requiredStringValue="문자"
-        />  
+        <Counter />
       </div>
       // <BooleanComponent bored />는 프로퍼티에 true 전달
       // <BooleanComponent />는 프로퍼티에 false 전달
