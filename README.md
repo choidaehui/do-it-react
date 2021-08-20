@@ -1,5 +1,5 @@
 # do-it-react 스터디 파일
-
+``` javascript
       import React, { Component } from 'react';
       import ChildComponent from './component/ChildComponent';
 
@@ -50,3 +50,4 @@
       }
 
       export default App;
+```      
