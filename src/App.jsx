@@ -3,6 +3,8 @@ import BooleanComponent from './component/BooleanComponent';
 import ChildComponent2 from './component/ChildComponent2';
 import Counter from './component/Counter';
 import LifecycleExample from './component/LifecycleExample';
+import NewCounter from './component/NewCounter';
+import PrevCounter from './component/PrevCounter';
 import StateExample from './component/StateExample';
 
 // 작성된 컴포넌트를 App.js로 불러오기
@@ -11,16 +13,24 @@ import StateExample from './component/StateExample';
 import TodaysPlan from './component/TodaysPlan';
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { count: 10 };
+    this.resetCount = this.resetCount.bind(this);
+  }
+  resetCount() {
+    this.setState(({ count }) => ({ count: count + 10 }));
+  }
   render() {
     return (
        // JSX는 HTML이 아니라 XML 마크업 규칙을 따른다.
        // 엘리먼트의 시작표시와 < 마침 표시의 />의 짝이 맞아야 한다.
        // 컴포넌트를 JSX 안에 마크업 형식으로 추가
       <div>
-        <LifecycleExample />
+        <div><PrevCounter count={this.state.count} /></div>
+        <div><NewCounter count={this.state.count} /></div>
+        <button onClick={this.resetCount}>{this.state.count + 10}으로 초기화</button>
       </div>
-      // <BooleanComponent bored />는 프로퍼티에 true 전달
-      // <BooleanComponent />는 프로퍼티에 false 전달
     );
   }
 }
